@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nama Anda - Freelancer Spesialis n8n Automation</title>
+    <meta name="description" content="Saya membantu bisnis mengotomatiskan proses kerja, menghubungkan berbagai aplikasi, dan meningkatkan efisiensi menggunakan n8n.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0A; /* Slightly off-black for a softer look */
+        }
+        #interactive-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #9333ea, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px -10px rgba(147, 51, 234, 0.2);
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <!-- Interactive Background Canvas -->
+    <canvas id="interactive-bg"></canvas>
+
+    <div class="content-wrapper">
+        <!-- Header -->
+        <header class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg border-b border-gray-800">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="text-xl font-bold text-white">
+                    <span class="text-gradient">N</span>ama <span class="text-gradient">A</span>nda
+                </a>
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="hover:text-purple-400 transition-colors">Layanan</a>
+                    <a href="#portfolio" class="hover:text-purple-400 transition-colors">Portofolio</a>
+                    <a href="#about" class="hover:text-purple-400 transition-colors">Tentang Saya</a>
+                    <a href="#contact" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-5 rounded-lg transition-colors">Hubungi Saya</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+             <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+                <a href="#services" class="block py-2 hover:text-purple-400">Layanan</a>
+                <a href="#portfolio" class="block py-2 hover:text-purple-400">Portofolio</a>
+                <a href="#about" class="block py-2 hover:text-purple-400">Tentang Saya</a>
+                <a href="#contact" class="block mt-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-5 rounded-lg text-center">Hubungi Saya</a>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-6">
+            <!-- Hero Section -->
+            <section id="hero" class="min-h-screen flex items-center text-center">
+                <div class="max-w-3xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
+                        Otomatisasi Proses Bisnis dengan <span class="text-gradient">Keahlian n8n</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 mb-8">
+                        Saya membantu bisnis Anda menghubungkan aplikasi, menyederhanakan alur kerja, dan membuka potensi pertumbuhan tanpa batas.
+                    </p>
+                    <a href="#contact" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:opacity-90 transition-opacity transform hover:scale-105">
+                        Diskusikan Proyek Anda
+                    </a>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="py-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Apa yang Saya Tawarkan</h2>
+                    <p class="text-gray-400 mt-2">Solusi otomasi yang dirancang khusus untuk kebutuhan Anda.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-gray-900/50 border border-gray-800 p-8 rounded-xl card-hover backdrop-blur-sm">
+                        <div class="w-12 h-12 bg-purple-900/50 text-purple-400 rounded-lg flex items-center justify-center mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20V16"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Pengembangan Workflow Custom</h3>
+                        <p class="text-gray-400">Membangun alur kerja n8n dari nol yang kompleks dan efisien untuk menyelesaikan masalah spesifik bisnis Anda.</p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-gray-900/50 border border-gray-800 p-8 rounded-xl card-hover backdrop-blur-sm">
+                        <div class="w-12 h-12 bg-purple-900/50 text-purple-400 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8L22 12L18 16"/><path d="M6 8L2 12L6 16"/><path d="M15 4L9 20"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Integrasi API & Webhook</h3>
+                        <p class="text-gray-400">Menghubungkan berbagai platform dan layanan, bahkan yang tidak memiliki integrasi bawaan, melalui API dan webhook.</p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-gray-900/50 border border-gray-800 p-8 rounded-xl card-hover backdrop-blur-sm">
+                        <div class="w-12 h-12 bg-purple-900/50 text-purple-400 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12c0-5.25-4.25-9.5-9.5-9.5S2.5 6.75 2.5 12s4.25 9.5 9.5 9.5"/><path d="M12 18c3.31 0 6-2.69 6-6s-2.69-6-6-6"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Optimalisasi Proses Bisnis</h3>
+                        <p class="text-gray-400">Menganalisis proses manual Anda dan mengubahnya menjadi sistem otomatis yang menghemat waktu dan mengurangi kesalahan.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Section -->
+            <section id="portfolio" class="py-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Contoh Proyek</h2>
+                    <p class="text-gray-400 mt-2">Beberapa solusi yang telah saya bangun untuk klien.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Portfolio Item 1 -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden card-hover backdrop-blur-sm">
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold text-white mb-2">Laporan Penjualan Otomatis</h3>
+                            <p class="text-gray-400 mb-4">Secara otomatis menarik data penjualan harian dari platform E-commerce, mengubahnya menjadi laporan PDF, dan mengirimkannya ke email manajemen setiap pagi.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">Shopify</span>
+                                <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">Google Sheets</span>
+                                <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">Gmail</span>
+                                <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">PDFMonkey</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2 -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden card-hover backdrop-blur-sm">
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold text-white mb-2">Manajemen Prospek dari Media Sosial</h3>
+                            <p class="text-gray-400 mb-4">Menangkap setiap lead baru dari iklan Facebook, memperkayanya dengan data, lalu memasukkannya ke dalam Pipedrive CRM dan memberi notifikasi tim sales di Slack.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">Facebook Lead Ads</span>
+                                <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">Pipedrive</span>
+                                <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">Slack</span>
+                                <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">OpenAI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Me Section -->
+            <section id="about" class="py-20">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Tentang Saya</h2>
+                    <p class="text-lg text-gray-400 mb-4">
+                        Halo! Saya [Nama Anda], seorang freelancer yang bersemangat dalam dunia otomasi. Saya percaya bahwa setiap tugas yang berulang dapat dan harus diotomatiskan. Dengan n8n, saya memiliki alat yang ampuh untuk mewujudkannya.
+                    </p>
+                    <p class="text-lg text-gray-400">
+                        Tujuan saya adalah membantu Anda dan tim Anda fokus pada pekerjaan yang benar-benar penting dan kreatif, sementara sistem otomasi menangani tugas-tugas rutin.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-20">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Mari Wujudkan Ide Anda</h2>
+                    <p class="text-lg text-gray-400 mb-8">
+                        Punya proses yang ingin diotomatiskan atau ide proyek? Saya siap membantu. Kirimkan pesan kepada saya dan mari kita diskusikan bagaimana n8n dapat mengubah bisnis Anda.
+                    </p>
+                    <a href="mailto:emailanda@contoh.com" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:opacity-90 transition-opacity transform hover:scale-105">
+                        Kirim Email
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-gray-800 mt-20">
+            <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+                <p>&copy; 2024 [Nama Anda]. Dibuat dengan semangat otomasi.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for Interactive Background
+        const canvas = document.getElementById('interactive-bg');
+        const ctx = canvas.getContext('2d');
+        let particlesArray;
+
+        function setCanvasSize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+
+            update() {
+                if (this.x > canvas.width || this.x < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y > canvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * .4) - .2;
+                let directionY = (Math.random() * .4) - .2;
+                let color = 'rgba(147, 51, 234, 0.5)'; // Purple color
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
+                        ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                        opacityValue = 1 - (distance / 20000);
+                        ctx.strokeStyle = `rgba(236, 72, 153, ${opacityValue})`; // Pink color
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connect();
+        }
+
+        window.addEventListener('resize', () => {
+            setCanvasSize();
+            init();
+        });
+
+        setCanvasSize();
+        init();
+        animate();
+
+        // JavaScript for Mobile Menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links in mobile menu
+        document.querySelectorAll('#mobile-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
+
